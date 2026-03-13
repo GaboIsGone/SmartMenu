@@ -1,46 +1,40 @@
 /* ============================================
-   SMARTMENU — GLOBAL STYLES
-   Cambia las variables de aquí abajo para
-   modificar colores en toda la app de golpe.
+   SMARTMENU v2 — GLOBAL STYLES
+   Cambia las variables de :root para
+   modificar colores en toda la app.
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
 :root {
   /* --- COLORES PRINCIPALES --- */
-  --bg: #0f0e0c;
-  --bg-card: #1a1916;
-  --bg-card-hover: #222118;
-  --border: #2e2c27;
+  --bg:           #0d0c0a;
+  --bg-card:      #171613;
+  --bg-card-hover:#1e1c18;
+  --border:       #2a2820;
 
   /* --- TEXTO --- */
-  --text-primary: #f0ede6;
-  --text-secondary: #9e9a90;
-  --text-muted: #5a5750;
+  --text-primary:   #ede9e0;
+  --text-secondary: #9a9488;
+  --text-muted:     #55524b;
 
-  /* --- ACENTO (cambia esto para cambiar el color principal) --- */
-  --accent: #d4a85a;
-  --accent-light: #e8c98a;
-  --accent-dim: rgba(212, 168, 90, 0.12);
+  /* --- ACENTO — cambia esto para cambiar el color principal --- */
+  --accent:       #c9a052;
+  --accent-light: #e0c07a;
+  --accent-dim:   rgba(201,160,82,0.1);
 
   /* --- TIPOGRAFÍA --- */
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
 
-  /* --- ESPACIADO --- */
-  --radius: 12px;
+  /* --- RADIOS --- */
+  --radius:    14px;
   --radius-sm: 8px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--bg);
@@ -51,7 +45,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar personalizada */
-::-webkit-scrollbar { width: 5px; }
+/* ---- ANIMATIONS ---- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* ---- RESPONSIVE NAV ---- */
+@media (max-width: 640px) {
+  .desktop-nav { display: none !important; }
+  .mobile-nav-btn { display: flex !important; }
+}
+
+/* ---- SELECTION ---- */
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent-light);
+}
