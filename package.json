@@ -1,6 +1,6 @@
 {
   "name": "smartmenu",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "next": "16.0.7",
-    "react": "^18",
-    "react-dom": "^18"
+    "react": "^19",
+    "react-dom": "^19"
   }
 }
