@@ -1,0 +1,57 @@
+/* ============================================
+   SMARTMENU — GLOBAL STYLES
+   Cambia las variables de aquí abajo para
+   modificar colores en toda la app de golpe.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  /* --- COLORES PRINCIPALES --- */
+  --bg: #0f0e0c;
+  --bg-card: #1a1916;
+  --bg-card-hover: #222118;
+  --border: #2e2c27;
+
+  /* --- TEXTO --- */
+  --text-primary: #f0ede6;
+  --text-secondary: #9e9a90;
+  --text-muted: #5a5750;
+
+  /* --- ACENTO (cambia esto para cambiar el color principal) --- */
+  --accent: #d4a85a;
+  --accent-light: #e8c98a;
+  --accent-dim: rgba(212, 168, 90, 0.12);
+
+  /* --- TIPOGRAFÍA --- */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* --- ESPACIADO --- */
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 300;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
